@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2dffa3-e77b-461d-b177-59c6fa682927" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aoc2022.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day11.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day12.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day13.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day9.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day14.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +13,13 @@
   <component name="ChangesViewManager">
     <option name="groupingKeys">
       <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
     </option>
   </component>
   <component name="Git.Settings">
@@ -48,7 +38,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Day14">
     <configuration name="Day13" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Day13" />
       <module name="aoc2022" />
@@ -56,8 +46,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Day14" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day14" />
+      <module name="aoc2022" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Day14" />
         <item itemvalue="Application.Day13" />
       </list>
     </recent_temporary>
@@ -71,6 +69,17 @@
       <option name="presentableId" value="Default" />
       <updated>1670968713692</updated>
     </task>
+    <task id="LOCAL−00001" summary="Add files">
+      <created>1670969323974</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1670969323974</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add files" />
   </component>
 </project>
