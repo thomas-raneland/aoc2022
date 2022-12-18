@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a2dffa3-e77b-461d-b177-59c6fa682927" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Day16.java" afterDir="false" />
+    <list default="true" id="0a2dffa3-e77b-461d-b177-59c6fa682927" name="Default Changelist" comment="Day 17">
+      <change afterPath="$PROJECT_DIR$/src/Day17.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day15.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day15.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +41,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.Day16">
+  <component name="RunManager" selected="Application.Day17">
     <configuration name="Day13" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Day13" />
       <module name="aoc2022" />
@@ -76,8 +76,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Day17" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day17" />
+      <module name="aoc2022" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Day17" />
         <item itemvalue="Application.Day16" />
         <item itemvalue="Application.Day15" />
         <item itemvalue="Application.Day14" />
@@ -112,13 +120,21 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1671146790613</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Day 16">
+      <created>1671346868247</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1671346868247</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add files" />
     <MESSAGE value="Day 14" />
     <MESSAGE value="Day 15" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 15" />
+    <MESSAGE value="Day 16" />
+    <MESSAGE value="Day 17" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 17" />
   </component>
 </project>
