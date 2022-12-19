@@ -18,7 +18,6 @@ public class Day18 {
     private static void partI(String input) {
         List<Cube> cubes = input.lines().map(Cube::parse).toList();
         List<Side> sides = cubes.stream().flatMap(Cube::sides).toList();
-
         Map<Side, Integer> occurrences = new HashMap<>();
 
         for (Side side : sides) {
@@ -34,7 +33,6 @@ public class Day18 {
         Cube min = new Cube(cubes.stream().mapToInt(Cube::x).min().orElseThrow(),
                 cubes.stream().mapToInt(Cube::y).min().orElseThrow(),
                 cubes.stream().mapToInt(Cube::z).min().orElseThrow());
-
 
         Cube max = new Cube(cubes.stream().mapToInt(Cube::x).max().orElseThrow(),
                 cubes.stream().mapToInt(Cube::y).max().orElseThrow(),
@@ -79,6 +77,7 @@ public class Day18 {
         }
 
         if (Math.abs(cube.x) == 100 || Math.abs(cube.y) == 100 || Math.abs(cube.z) == 100) {
+            cache.put(cube, true);
             return true;
         }
 

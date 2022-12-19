@@ -163,22 +163,26 @@ public class Day17 {
 
     private static ToLongFunction<Long> findHeightFunction(int[] heights, int rock) {
         for (int cycleSize = 1; cycleSize < Math.min(1_000_000, rock / 5); cycleSize++) {
-            int cycleHeightDiff = heights[rock] - heights[rock - cycleSize];
+            int cycleHeightDiff = heightDiff(heights, rock - cycleSize, cycleSize);
 
-            if (cycleHeightDiff == heights[rock - cycleSize] - heights[rock - 2 * cycleSize] &&
-                cycleHeightDiff == heights[rock - 2 * cycleSize] - heights[rock - 3 * cycleSize] &&
-                cycleHeightDiff == heights[rock - 3 * cycleSize] - heights[rock - 4 * cycleSize] &&
-                cycleHeightDiff == heights[rock - 4 * cycleSize] - heights[rock - 5 * cycleSize]) {
+            if (cycleHeightDiff == heightDiff(heights, rock - 2 * cycleSize, cycleSize) &&
+                cycleHeightDiff == heightDiff(heights, rock - 3 * cycleSize, cycleSize) &&
+                cycleHeightDiff == heightDiff(heights, rock - 4 * cycleSize, cycleSize) &&
+                cycleHeightDiff == heightDiff(heights, rock - 5 * cycleSize, cycleSize)) {
 
                 int cycle = cycleSize;
-                ToLongFunction<Long> cycles = rocks -> (rocks - rock) / cycle;
+                ToLongFunction<Long> fullCycles = rocks -> (rocks - rock) / cycle;
                 ToIntFunction<Long> lastPartialCycleLength = rocks -> (int) ((rocks - rock) % cycle);
-                return rocks -> heights[rock] - 1 + cycleHeightDiff * cycles.applyAsLong(rocks) +
-                                heights[rock - cycle + lastPartialCycleLength.applyAsInt(rocks)] - heights[rock - cycle];
+                return rocks -> heights[rock] - 1 + cycleHeightDiff * fullCycles.applyAsLong(rocks) +
+                                heightDiff(heights, rock - cycle, lastPartialCycleLength.applyAsInt(rocks));
             }
         }
 
         return null;
+    }
+
+    private static int heightDiff(int[] heights, int start, int length) {
+        return heights[start + length] - heights[start];
     }
 
     private static int moveLeftRight(JetGas jetGas, Shape shape, int leftEdge, int bottomEdge, Screen chamber) {
