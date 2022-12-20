@@ -3,51 +3,40 @@ import java.util.List;
 
 public class Day20 {
     public static void main(String... args) {
-        partI(testInput);
-        partI(realInput);
-        partII(testInput);
-        partII(realInput);
+        time(() -> partI(testInput));
+        time(() -> partI(realInput));
+        time(() -> partII(testInput));
+        time(() -> partII(realInput));
+    }
+
+    private static void time(Runnable r) {
+        long start = System.currentTimeMillis();
+        r.run();
+        System.out.println((System.currentTimeMillis() - start) + " ms\n");
     }
 
     private static void partI(String input) {
-        List<MNumber> originalOrder = new ArrayList<>();
-        MNumber prev = null;
-
-        for (String line : input.lines().toList()) {
-            MNumber n = new MNumber(Integer.parseInt(line), prev);
-            originalOrder.add(n);
-            prev = n;
-        }
-
-        originalOrder.get(0).prev = prev;
-        prev.next = originalOrder.get(0);
-
-        for (MNumber number : originalOrder) {
-            number.move(originalOrder.size());
-        }
-
-        long total = 0;
-        MNumber c = originalOrder.stream().filter(n -> n.value == 0).findFirst().orElseThrow();
-
-        for (int i = 0; i <= 3000; i++) {
-            if (i % 1000 == 0) {
-                total += c.value;
-                System.out.println(i + " " + c.value);
-            }
-
-            c = c.next;
-        }
-
-        System.out.println(total);
+        List<LinkedNumber> originalOrder = parseNumbers(input, 1);
+        mix(originalOrder);
+        printSumOfGroveCoordinates(originalOrder);
     }
 
     private static void partII(String input) {
-        List<MNumber> originalOrder = new ArrayList<>();
-        MNumber prev = null;
-        long magic = 811589153;
+        List<LinkedNumber> originalOrder = parseNumbers(input, 811589153);
+
+        for (int i = 0; i < 10; i++) {
+            mix(originalOrder);
+        }
+
+        printSumOfGroveCoordinates(originalOrder);
+    }
+
+    private static List<LinkedNumber> parseNumbers(String input, long decryptionKey) {
+        List<LinkedNumber> originalOrder = new ArrayList<>();
+        LinkedNumber prev = null;
 
         for (String line : input.lines().toList()) {
-            MNumber n = new MNumber(Integer.parseInt(line) * magic, prev);
+            LinkedNumber n = new LinkedNumber(Integer.parseInt(line) * decryptionKey, prev);
             originalOrder.add(n);
             prev = n;
         }
@@ -56,33 +45,25 @@ public class Day20 {
             throw new IllegalArgumentException();
         }
 
-        System.out.println(originalOrder);
         originalOrder.get(0).prev = prev;
         prev.next = originalOrder.get(0);
+        return originalOrder;
+    }
 
-        for (int i = 0; i < 10; i++) {
-            for (MNumber number : originalOrder) {
-                number.move(originalOrder.size());
-            }
-
-            MNumber first = originalOrder.stream().filter(n -> n.value == 0).findFirst().orElseThrow();
-            MNumber current = first;
-
-            while (current.next != first) {
-                System.out.print(current.value + ", ");
-                current = current.next;
-            }
-
-            System.out.println(current.value);
+    private static void mix(List<LinkedNumber> originalOrder) {
+        for (LinkedNumber number : originalOrder) {
+            number.move(originalOrder.size());
         }
+    }
 
+    private static void printSumOfGroveCoordinates(List<LinkedNumber> originalOrder) {
         long total = 0;
-        MNumber c = originalOrder.stream().filter(n -> n.value == 0).findFirst().orElseThrow();
+        LinkedNumber c = originalOrder.stream().filter(n -> n.value == 0).findFirst().orElseThrow();
 
         for (int i = 0; i <= 3000; i++) {
-            if (i % 1000 == 0) {
+            if (i % 1000 == 0 && i > 0) {
                 total += c.value;
-                System.out.println(i + " " + c.value);
+                System.out.println(i + ": " + c.value);
             }
 
             c = c.next;
@@ -91,12 +72,12 @@ public class Day20 {
         System.out.println(total);
     }
 
-    static class MNumber {
+    private static class LinkedNumber {
         private final long value;
-        private MNumber prev;
-        private MNumber next;
+        private LinkedNumber prev;
+        private LinkedNumber next;
 
-        MNumber(long value, MNumber prev) {
+        LinkedNumber(long value, LinkedNumber prev) {
             this.value = value;
             this.prev = prev;
 
@@ -105,57 +86,42 @@ public class Day20 {
             }
         }
 
-        @Override
-        public String toString() {
-            return "" + value;
-        }
-
         void move(int size) {
+            long end = Math.abs(value) % (size - 1);
+
             if (value < 0) {
-                final long end = reducePos(size, Math.abs(value));
                 for (int i = 0; i < end; i++) {
-                    MNumber origPrev = prev;
+                    LinkedNumber origPrev = prev;
 
                     // bypass me
                     prev.next = next;
                     next.prev = prev;
 
-                    // connect to prevprev
+                    // connect back to prevprev
                     origPrev.prev.next = this;
                     prev = origPrev.prev;
 
-                    // connect to prev
+                    // connect forward to prev
                     origPrev.prev = this;
                     next = origPrev;
                 }
             } else if (value > 0) {
-                final long end = reducePos(size, value);
                 for (int i = 0; i < end; i++) {
-                    MNumber origNext = next;
+                    LinkedNumber origNext = next;
 
                     // bypass me
                     prev.next = next;
                     next.prev = prev;
 
-                    // connect to nextnext
+                    // connect forward to nextnext
                     origNext.next.prev = this;
                     next = origNext.next;
 
-                    // connect to next
+                    // connect back to next
                     origNext.next = this;
                     prev = origNext;
                 }
             }
-        }
-
-        private long reducePos(int size, long abs) {
-            long x = abs % size + abs / size;
-
-            if (x > size) {
-                return reducePos(size, x);
-            }
-
-            return x;
         }
     }
 
