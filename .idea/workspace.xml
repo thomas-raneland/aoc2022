@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2dffa3-e77b-461d-b177-59c6fa682927" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Day21.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day22.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,14 +47,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.Day21">
-    <configuration name="Day17" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day17" />
-      <module name="aoc2022" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Day22">
     <configuration name="Day18" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Day18" />
       <module name="aoc2022" />
@@ -83,13 +76,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Day22" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day22" />
+      <module name="aoc2022" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Day22" />
         <item itemvalue="Application.Day21" />
         <item itemvalue="Application.Day20" />
         <item itemvalue="Application.Day19" />
         <item itemvalue="Application.Day18" />
-        <item itemvalue="Application.Day17" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +162,13 @@
       <option name="presentableId" value="LOCAL−00010" />
       <updated>1671569179544</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL−00011" summary="Day 21">
+      <created>1671635231385</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1671635231385</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -176,6 +182,7 @@
     <MESSAGE value="Day 19" />
     <MESSAGE value="Day 20" />
     <MESSAGE value="Day 20 beauified" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 20 beauified" />
+    <MESSAGE value="Day 21" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 21" />
   </component>
 </project>
