@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2dffa3-e77b-461d-b177-59c6fa682927" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Day23.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day24.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day20.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day20.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,49 +48,72 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.Day23">
-    <configuration name="Day19" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day19" />
+  <component name="RecentsManager">
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="util" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Day25">
+    <configuration name="BreadthFirstSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="util.BreadthFirstSearch" />
+      <module name="aoc2022" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day24" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day24" />
       <module name="aoc2022" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day20" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day20" />
+    <configuration name="Day25" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day25" />
       <module name="aoc2022" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day21" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day21" />
+    <configuration name="DepthFirstSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="util.DepthFirstSearch" />
       <module name="aoc2022" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day22" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day22" />
+    <configuration name="Dijkstra" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="util.Dijkstra" />
       <module name="aoc2022" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Day23" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day23" />
-      <module name="aoc2022" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Day23" />
-        <item itemvalue="Application.Day22" />
-        <item itemvalue="Application.Day21" />
-        <item itemvalue="Application.Day20" />
-        <item itemvalue="Application.Day19" />
+        <item itemvalue="Application.Day25" />
+        <item itemvalue="Application.Dijkstra" />
+        <item itemvalue="Application.BreadthFirstSearch" />
+        <item itemvalue="Application.DepthFirstSearch" />
+        <item itemvalue="Application.Day24" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +204,13 @@
       <option name="presentableId" value="LOCAL−00013" />
       <updated>1671747919074</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL−00014" summary="Day 23">
+      <created>1671785218971</created>
+      <option name="number" value="LOCAL−00014" />
+      <option name="presentableId" value="LOCAL−00014" />
+      <updated>1671785218971</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -196,6 +226,7 @@
     <MESSAGE value="Day 20 beauified" />
     <MESSAGE value="Day 21" />
     <MESSAGE value="Day 22" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 22" />
+    <MESSAGE value="Day 23" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 23" />
   </component>
 </project>
