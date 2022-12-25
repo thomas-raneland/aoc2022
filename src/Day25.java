@@ -1,5 +1,7 @@
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Day25 {
     public static void main(String... args) {
@@ -8,88 +10,60 @@ public class Day25 {
     }
 
     private static void partI(String input) {
-        long sum = 0;
-
-        for (String line : input.lines().toList()) {
-            Number number = Number.parse(line);
-            sum += number.toDecimal();
-        }
-
-        System.out.println("Decimal sum: " + sum);
-        System.out.println("SNAFU sum: " + Number.fromDecimal(sum));
+        long sum = input.lines().map(Number::parse).mapToLong(Number::toDecimal).sum();
+        System.out.printf("%s (%d decimal)\n",  Number.fromDecimal(sum), sum);
     }
 
-    private record Number(List<Digit> digits) {
-        static Number parse(String s) {
-            return new Number(s.chars().mapToObj(c -> Digit.find((char) c)).toList());
-        }
-
+    private static record Number(List<Digit> digits) {
         @Override
         public String toString() {
-            StringBuilder sb = new StringBuilder();
-            digits.forEach(d -> sb.append(d.c));
-            return sb.toString();
+            return digits.stream().map(Digit::toString).collect(Collectors.joining());
         }
 
         long toDecimal() {
-            long total = 0;
-
-            for (int i = 0; i < digits.size(); i++) {
-                total += Math.pow(5, digits.size() - i - 1) * digits.get(i).value;
-            }
-
-            return total;
+            return digits.stream().mapToLong(d -> d.value).reduce(0, (v, r) -> v * 5 + r);
         }
 
-        static Number fromDecimal(final long value) {
+        static Number fromDecimal(long value) {
             LinkedList<Digit> digits = new LinkedList<>();
-            long left = value;
 
-            while (left != 0) {
-                Digit digit = switch ((int) (left % 5)) {
-                    case 0 -> Digit.ZERO;
-                    case 1 -> Digit.ONE;
-                    case 2 -> Digit.TWO;
-                    case 3 -> Digit.DOUBLE_MINUS;
-                    case 4 -> Digit.MINUS;
-                    default -> throw new IllegalStateException();
-                };
-
+            while (value != 0) {
+                Digit digit = Digit.all[(int) (value % 5)];
                 digits.addFirst(digit);
-                left /= 5;
-
-                if (digit.value < 0) {
-                    left++;
-                }
+                value = digit.value < 0 ? value / 5 + 1 : value / 5;
             }
 
             return new Number(digits);
         }
+
+        static Number parse(String s) {
+            return new Number(s.chars().mapToObj(c -> Digit.find((char) c)).toList());
+        }
     }
 
-    enum Digit {
-        DOUBLE_MINUS('=', -2),
-        MINUS('-', -1),
+    private enum Digit {
         ZERO('0', 0),
         ONE('1', 1),
-        TWO('2', 2);
+        TWO('2', 2),
+        DOUBLE_MINUS('=', -2),
+        MINUS('-', -1);
 
-        private final char c;
+        static final Digit[] all = values();
+        private final char character;
         private final int value;
 
-        Digit(char c, int value) {
-            this.c = c;
+        Digit(char character, int value) {
+            this.character = character;
             this.value = value;
         }
 
-        public static Digit find(char c) {
-            for (Digit d : values()) {
-                if (d.c == c) {
-                    return d;
-                }
-            }
+        @Override
+        public String toString() {
+            return String.valueOf(character);
+        }
 
-            throw new IllegalArgumentException();
+        public static Digit find(char c) {
+            return Stream.of(all).filter(d -> d.character == c).findFirst().orElseThrow();
         }
     }
 
