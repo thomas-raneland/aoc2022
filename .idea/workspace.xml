@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a2dffa3-e77b-461d-b177-59c6fa682927" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Day24.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day20.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day20.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +50,11 @@
     <key name="MoveInnerDialog.RECENTS_KEY">
       <recent name="util" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Day25">
+  <component name="RunManager" selected="Application.Day25Shorter">
     <configuration name="BreadthFirstSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="util.BreadthFirstSearch" />
       <module name="aoc2022" />
@@ -67,15 +68,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day24" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day24" />
+    <configuration name="Day25" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day25" />
       <module name="aoc2022" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day25" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day25" />
+    <configuration name="Day25Shorter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day25Shorter" />
       <module name="aoc2022" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -109,11 +110,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Day25Shorter" />
         <item itemvalue="Application.Day25" />
         <item itemvalue="Application.Dijkstra" />
         <item itemvalue="Application.BreadthFirstSearch" />
         <item itemvalue="Application.DepthFirstSearch" />
-        <item itemvalue="Application.Day24" />
       </list>
     </recent_temporary>
   </component>
@@ -210,7 +211,13 @@
       <option name="presentableId" value="LOCAL−00014" />
       <updated>1671785218971</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL−00015" summary="Day 24 and 25">
+      <created>1671950471637</created>
+      <option name="number" value="LOCAL−00015" />
+      <option name="presentableId" value="LOCAL−00015" />
+      <updated>1671950471637</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -227,6 +234,7 @@
     <MESSAGE value="Day 21" />
     <MESSAGE value="Day 22" />
     <MESSAGE value="Day 23" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 23" />
+    <MESSAGE value="Day 24 and 25" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 24 and 25" />
   </component>
 </project>
